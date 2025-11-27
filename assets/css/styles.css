@@ -687,4 +687,29 @@
     color: var(--color-muted);
     font-style: italic;
   }
+
+
+  /* Quote styling inside blog posts */
+.post-quote {
+    margin: 2rem 0;
+    padding: 1.5rem 1.8rem;
+    background: rgba(255, 88, 79, 0.08); /* soft red background */
+    border-left: 4px solid #ff584f; /* highlight line */
+    border-radius: 0.8rem;
+    color: #d1d0d1;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.7;
+    font-style: italic;
+  }
+  
+  .post-quote .quote-author {
+    display: block;
+    margin-top: 0.75rem;
+    text-align: right;
+    font-size: 0.95rem;
+    color: #5b5756; /* muted grey */
+    font-style: normal;
+  }
+  
   

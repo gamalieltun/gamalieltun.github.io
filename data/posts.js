@@ -32,7 +32,7 @@ const posts = [
           <figcaption>Bill and Tara</figcaption>
         </figure>
         
-        educate<p>ကျွန်တော်တို့ ဖွံ့ဖြိုးနေဆဲနိုင်ငံတွေကသူတွေ သိထား၊ နားလည်ထားတာက အမေရိကန်လို နိုင်ငံတစ်နိုင်ငံက နိုင်ငံသားတွေက အင်မတန်မှ ပြီးပြည့်စုံပြီးသားသူတွေ၊ ပညာရေး ကျန်းမာရေးအဘက်ဘက်က ပြည့်စုံပြီးသားလူတွေ၊ ဒီလိုမျိုး။
+        <p>ကျွန်တော်တို့ ဖွံ့ဖြိုးနေဆဲနိုင်ငံတွေကသူတွေ သိထား၊ နားလည်ထားတာက အမေရိကန်လို နိုင်ငံတစ်နိုင်ငံက နိုင်ငံသားတွေက အင်မတန်မှ ပြီးပြည့်စုံပြီးသားသူတွေ၊ ပညာရေး ကျန်းမာရေးအဘက်ဘက်က ပြည့်စုံပြီးသားလူတွေ၊ ဒီလိုမျိုး။
         </p>
         <p>ဒီစာအုပ်ဖတ်လိုက်မှ သိလိုက်ရတဲ့အရာက တကယ်ကို အံ့ြသစရာပဲ။ သူတို့နိုင်ငံမှာတောင် ကျောင်းမထားတဲ့၊ အတွေးခေါင်တဲ့၊ တစ်ယူသန် မိဘတွေ၊ မိသားစုတွေရှိနေသေးတယ်။ ကျွန်တော်တို့တွေမထင်ထားတဲ့ အမှောင်ဖက်ခြမ်းတစ်ခုကို တွေ့ရတယ်။
         </p>
@@ -69,32 +69,55 @@ const posts = [
     },
     {
       id: 2,
-      slug: "lessons-from-building-side-projects",
-      title: "Lessons from Building Side Projects",
-      date: "2025-02-10",
-      author: "[Your Name]",
-      tags: ["Projects", "Learning"],
+      slug: "Make Time| My View on this Book",
+      title: "Make Time| My View on this Book",
+      date: "2021-11-27",
+      author: "Gamaliel Tun",
+      tags: ["Article", "Book Review"],
       excerpt:
-        "Side projects have been my favorite way to learn. Here are a few lessons I’ve picked up from shipping small things.",
-      featuredImage: "assets/images/post-2.jpg",
+        "Make Time is sort of a productivity book but it’s not. It’s not about working more done, it’s about working more fun. Since reading this book about a month ago, I start doing some of the tactics, which helps me do my studies and other daily tasks.",
+      featuredImage: "assets/images/maketime.jpeg",
       content: `
-        <p>
-          Building side projects has taught me more than any single course. The moment you try to ship something
-          to real people, you start to see where your gaps are.
-        </p>
-        <p>
-          A few lessons:
-        </p>
+        <p>Make Time is sort of a productivity book but it’s not. It’s not about working more done, it’s about working more fun. Since reading this book about a month ago, I start doing some of the tactics, which helps me do my studies and other daily tasks.</p>
+        <p>Make Time is written by Jake Knapp and John Zeratsky. They are tech guys who worked at Google, designing apps like YouTube, Gmail, and Google Hangout. This book is the outcome of lots of experiments they had done and the experiences they’d encountered.</p>
+        <p>Before deep-diving into the system, there’s one important question for us to answer and we need to understand that. It’s “Why are we so busy?“</p>
+        <p>The thing is that we have two main things that make us busy all day. The authors mentioned them in this book. They are</p>
         <ul>
-          <li>Start small. Tiny, shippable projects are better than huge unfinished ideas.</li>
-          <li>Decide who you’re building for, even if it's just you in the beginning.</li>
-          <li>Accept that the first version will never be perfect — and that's okay.</li>
+        <li>The Busy Bandwagon</li>
+        <li>The infinity pools</li>
         </ul>
-        <p>
-          Most importantly, treat side projects as experiments. They don't all need to become startups. Sometimes
-          the outcome is simply that you learned something new.
-        </p>
-      `,
+        <h2>What is a Busy Bandwagon?</h2>
+        <p>It means endless tasks in our daily life. We always say we’re so out of control as we have lots and lots of tasks, duties- it is prioritizing others’ work than ours. Because of that, we don’t have our own time, our own time to relax and recreate.</p>
+        <h2>What are the infinity pools?</h2>
+        <p>Facebook, Instagram, Twitter, etc. are all infinity pools. There are always new posts, videos, and other stuff that are hunting for your attention. They are the things that we used to think of as things we use when we are tired or after daily tasks. In reality, they are endless distractions for life.</p>
+        <p>What we use to get out of them is Willpower. But actually, we can’t rely on it. Because habits always win willpower, we can’t deny it.</p>
+        
+        <p>This is where the system comes in:</p>
+        <figure class="post-image">
+          <img src="assets/images/maketime1.jpeg" alt="Mind Map" />
+        </figure>
+        <p>As I mentioned above, it’s about working more fun. This system is friendly and flexible. It all depends on you. If it isn’t for you, don’t do it, just throw it away and try another one.</p>
+        
+        <h4>1. Highlight</h4>
+        <p>It’s an important step for your day. Choose what you want to prioritize in your day. It can be anything, Yes, ANYTHING, “Cleaning your bookshelf, Playing with your kids…..“. The only thing is that it has to be the thing you want to do, the thing that you feel satisfied by doing it.</p>
+        <p>Choosing a highlight might be a difficult thing for you at first, but gradually it will become a habit. Okay! So, “When should I choose my highlight?” It depends on you. If you are a night guy, you can choose after doing everything at night or before you sleep. If you are a morning guy, you can choose your highlight before doing anything or before your routine starts. For me, as I’m a morning guy, I choose my highlight in the morning. I write it down on a sticky note and put it beside my table. You can also use digital materials, it’s up to you. More ways are mentioned in the book.</p>
+
+        <h4>2. Laser</h4>
+        <p>You’ve chosen your highlight and decided to do it. But some many distractions and tasks are waiting to distract you to focus on your work such as social media, email, breaking news, etc. Yes, the news is also one of the distractions. (My Opinion-but in some parts of the world like Myanmar, people should listen to the news to keep in touch with the current situation. That’s an exception.) The one that works with me -till now- is creating barriers to distractions. For example, as I’m a teenager, I spend most of the time using my phone, using social media, and playing games. So, as soon as I knew this tactic, I start creating barriers to them: log out from Facebook, put my phone across the room or make it power off, turn off all the notifications, and turn on restriction mode on my phone, you can do it by using Google Digital Wellbeing.</p>
+
+        <h4>3. Energize</h4>
+        <p>You can’t do anything unless you are strong. Agree? Energy is needed for you to boost your productivity and focus on your work.</p>
+        <p>Let’s look back to the age of our ancestors, tens of thousands of years ago, they have to struggle for their survival a lot harder than us. But they could overcome it and that brings the evolution of human beings. Why would this happen if our ancestors didn’t have enough energy? Looking closely at their daily life, they have enough sleep hours and enough physical activity. These small factors can affect our lives enormously. For me, doing exercise boosts my energy. The book says-/p>
+        <blockquote class="post-quote">
+        “Research shows that the most important cognitive, health, and mood benefits of exercise can be attained in just twenty minutes.”
+        </blockquote>
+        <p>It is. Since reading this book, I made a time- about twenty minutes or thirty- for walking. After a few weeks, the benefits of it surfaced. It boosts my productivity and focus.</p>
+       
+        <h4>4. Reflect</h4>
+        <p>The Final Step is to reflect your system. You can take notes looking back to your day and decide which tactics you want to continue or stop. I take notes of my day every night and reflect. It shows what I should improve or eliminate.</p>
+        <p>Make time explains these steps in more detail and mention a lot of tactics for you. You should apply on yourself and try it. You should keep in mind that you don’t need to stress about perfection. If you can’t do it today, do it tomorrow. You can customize your routine./p>
+
+        `,
     },
     {
       id: 3,
