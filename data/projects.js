@@ -48,13 +48,11 @@ const projects = [
       tech: ["Ultrasonic Sensor", "Microcontroller", "Prototyping", "User Testing", "Embedded C"],
       summary:
         "A detachable ultrasonic-based smart cane attachment that enhances obstacle detection for visually impaired users. Developed in the 'Technology to Business' elective module.",
-      featuredImage: "assets/images/project-safestride-cover.jpg",
+      featuredImage: "assets/images/safestride.jpeg",
       liveUrl: "#",
       repoUrl: "#",
       description: `
-        <div class="project-image">
-          <img src="assets/images/project-safestride-hero.jpg" alt="SafeStride Prototype Overview" />
-        </div>
+      
     
         <h3>Project Background</h3>
         <p>

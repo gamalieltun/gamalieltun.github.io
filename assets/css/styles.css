@@ -712,4 +712,19 @@
     font-style: normal;
   }
   
+  .project-image {
+    max-width: 800px;           /* limit how wide it can get on large screens */
+    width: 100%;                /* still responsive */
+    margin: 2rem auto;          /* center it with space above/below */
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .project-image img {
+    width: 100%;
+    height: auto;               /* keep aspect ratio */
+    display: block;
+    object-fit: contain;        /* don't crop any text in the image */
+    background: #000;           /* optional: fills letterbox area on tall screens */
+  }
   

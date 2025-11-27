@@ -96,30 +96,22 @@
       </div>
     </section>
 
-    <!-- Latest Projects -->
-    <section class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="grid-3" id="homeProjects">
-          <!-- You can either hardcode 3 cards or later inject via JS -->
-          <article class="card project-card">
-            <h3>Project One</h3>
-            <p>Short description of a featured project that shows your skills and impact.</p>
-            <a href="portfolio.html" class="card-link">View project →</a>
-          </article>
-          <article class="card project-card">
-            <h3>Project Two</h3>
-            <p>Short description of another project related to your strengths.</p>
-            <a href="portfolio.html" class="card-link">View project →</a>
-          </article>
-          <article class="card project-card">
-            <h3>Project Three</h3>
-            <p>Short description of one more project, ideally in a different area.</p>
-            <a href="portfolio.html" class="card-link">View project →</a>
-          </article>
-        </div>
-      </div>
-    </section>
+    
+        <!-- Latest Projects -->
+        <section class="section section-alt">
+            <div class="container">
+              <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <!-- Change href to project.html if that's your projects page -->
+                <a href="portfolio.html" class="section-link">View all projects →</a>
+              </div>
+      
+              <div class="grid-3" id="homeProjects">
+                <!-- Filled by projects.js -->
+              </div>
+            </div>
+          </section>
+      
 
     <section class="section">
         <div class="container">
@@ -148,7 +140,11 @@
   </footer>
 
   <script src="data/posts.js"></script>
+  <script src="data/projects.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/blog.js"></script> <!-- for latest posts on home -->
+  <script src="assets/js/blog.js"></script>
+  <script src="assets/js/project.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <!-- for latest posts on home -->
 </body>
 </html>
