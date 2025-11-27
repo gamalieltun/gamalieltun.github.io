@@ -137,7 +137,7 @@ const projects = [
           microcontroller programming, and user-focused product development.
         </p>
       `,
-    }
+    },
     
 
     {
