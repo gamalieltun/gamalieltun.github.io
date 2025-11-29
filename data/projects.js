@@ -247,7 +247,7 @@ const projects = [
           <li><strong>Integrated camera features</strong> to allow users to capture item photos and upload them when posting items.</li>
           <li><strong>Developed the posting interface</strong> (form, categories, price, description).</li>
           <li><strong>Coded in-app messaging</strong> to enable students to communicate with buyers and sellers.</li>
-          <li>Contributed to database integration using <strong>MySQL + SQLite</strong> for item storage and retrieval.</li>
+          <li>Contributed to database integration using <strong>Firebase</strong> for item storage and retrieval.</li>
         </ul>
     
         <figure class="post-image">
@@ -261,7 +261,7 @@ const projects = [
           QR features, admin filtering, notifications), we encountered several difficulties during development:
         </p>
         <ul>
-          <li><strong>Database Synchronization</strong> – Integrating MySQL, SQLite, and WAMP server resulted in timing issues and occasional mismatched data.</li>
+          <li><strong>Database Synchronization</strong> – Integrating Firebase resulted in timing issues and occasional mismatched data.</li>
           <li><strong>Camera & Image Upload</strong> – Getting consistent image quality across phones required adjustments in the Camera API workflow.</li>
           <li><strong>UI Alignment</strong> – Coordinating consistent layouts across the Marketplace and Community pages was tricky because four team members handled different screens.</li>
           <li><strong>Messaging Integration</strong> – Ensuring smooth user-to-user messaging while maintaining message history required additional data structure changes.</li>
@@ -297,9 +297,10 @@ const projects = [
           integration, and messaging logic while working within a team-driven environment.
         </p>
     
-        <div class="project-image">
-          <img src="assets/images/project-unicycle-final.jpg" alt="Final Demo Screens" />
-        </div>
+        <figure class="post-image">
+          <img src="assets/images/unicycle/unicycle1.jpeg" alt="Student Interview" />
+          <figcaption>Gallery Walk</figcaption>
+        </figure>
       `,
     }
     
