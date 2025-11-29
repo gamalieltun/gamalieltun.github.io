@@ -132,6 +132,6 @@ const projects = [
           The UI is optimized for mobile so it can be used quickly after each purchase.
         </p>
       `,
-    },
+    }
   ];
   
