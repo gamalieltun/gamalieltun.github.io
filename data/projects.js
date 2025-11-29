@@ -5,41 +5,9 @@
 // id, slug, title, role, year, tags [array], tech [array], summary, description (HTML), featuredImage, links
 
 const projects = [
+    
     {
       id: 1,
-      slug: "personal-portfolio-website",
-      title: "Personal Portfolio Website",
-      role: "Designer & Developer",
-      year: 2025,
-      tags: ["Web", "Frontend"],
-      tech: ["HTML", "CSS", "JavaScript"],
-      summary:
-        "A fast, fully static portfolio site with a file-based blog, dark theme, and responsive layout.",
-      featuredImage: "assets/images/project-portfolio.jpg",
-      liveUrl: "#",
-      repoUrl: "#",
-      description: `
-        <p>
-          This site is my central hub on the internet. I wanted something simple, fast,
-          and fully under my control without relying on heavy frameworks.
-        </p>
-        <p>
-          The project uses a file-based content approach: blog posts and projects are stored as JavaScript
-          arrays (<code>posts.js</code> and <code>projects.js</code>). The pages are then rendered
-          dynamically with vanilla JavaScript.
-        </p>
-        <p>
-          Key features include:
-        </p>
-        <ul>
-          <li>Responsive, dark-only design</li>
-          <li>File-based blog and projects</li>
-          <li>SEO-friendly structure</li>
-        </ul>
-      `,
-    },
-    {
-      id: 2,
       slug: "safestride-smart-cane-addon",
       title: "SafeStride – Smart Obstacle Detection Add-On",
       role: "Prototype Builder | Microcontroller Developer | Embedded Programmer",
@@ -87,7 +55,7 @@ const projects = [
         </ul>
     
         <div class="project-image">
-          <img src="assets/images/project-safestride-prototype.jpg" alt="SafeStride Prototype Unit" />
+          <img src="assets/images/safestride1.jpeg" alt="SafeStride Brainstorm" />
         </div>
     
         <h3>Technical Details</h3>
@@ -100,7 +68,7 @@ const projects = [
         </ul>
     
         <div class="project-image">
-          <img src="assets/images/project-safestride-testing.jpg" alt="User Testing Session" />
+          <img src="assets/images/safestride2.jpeg" alt="Mobile Interface" />
         </div>
     
         <h3>User Testing & Validation</h3>
@@ -124,7 +92,7 @@ const projects = [
         </ul>
     
         <div class="project-image">
-          <img src="assets/images/project-safestride-financials.jpg" alt="Revenue Projection Chart" />
+          <img src="assets/images/safestride3.jpeg" alt="The Prototype" />
         </div>
     
         <h3>Outcome</h3>
@@ -134,12 +102,16 @@ const projects = [
           to solve meaningful real-world problems. This project strengthened my skills in embedded systems, hardware design, 
           microcontroller programming, and user-focused product development.
         </p>
+        <div class="project-image">
+          <img src="assets/images/safestride4.jpeg" alt="User Trial" />
+        </div>
+
       `,
     },
     
 
     {
-      id: 3,
+      id: 2,
       slug: "student-expense-tracker",
       title: "Student Expense Tracker",
       role: "Full-Stack Developer",
