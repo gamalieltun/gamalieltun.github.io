@@ -112,26 +112,98 @@ const projects = [
 
     {
       id: 2,
-      slug: "student-expense-tracker",
-      title: "Student Expense Tracker",
-      role: "Full-Stack Developer",
+      slug: "habitrack-habit-fitness-app",
+      title: "HabiTrack – Youth Habit & Fitness Tracking App",
+      role: "Prototype & Research Lead",
       year: 2024,
-      tags: ["Web App", "Productivity"],
-      tech: ["HTML", "CSS", "JavaScript"],
+      tags: ["Mobile App", "Health", "Gamification"],
+      tech: ["Figma", "UI/UX Prototyping", "User Research"],
       summary:
-        "A lightweight web app that helps students track daily expenses and view simple analytics.",
-      featuredImage: "assets/images/project-expense.jpg",
+        "A gamified habit-tracking concept designed to help youths build consistent fitness routines. Created as a team project for the SIP module in Singapore Polytechnic, focusing on structured goals, motivation, and realistic health habit-building.",
+      featuredImage: "assets/images/habitrack/habitrack.jpeg",
       liveUrl: "#",
       repoUrl: "#",
       description: `
+        
+    
         <p>
-          The Student Expense Tracker is a small web app built to help manage day-to-day spending.
-          It focuses on clarity: quick input, clean summaries, and simple charts.
+          HabiTrack is a youth-focused habit and fitness tracking app developed during the 
+          <strong>Social Innovation Project (SIP)</strong> module in Year 2 at Singapore Polytechnic. 
+          Our challenge was to propose a realistic solution that encourages healthier lifestyles 
+          among youths aged 17–25 in Queenstown, based on real user research and problem validation.
         </p>
+    
         <p>
-          The UI is optimized for mobile so it can be used quickly after each purchase.
+          Insights from the SIP survey and interviews showed a clear pattern: 
+          <strong>youths want to stay active, but struggle due to tight schedules, inconsistent motivation, and lack of structure</strong>. 
+          HabiTrack addresses this by combining simple everyday routines with gamification, progress tracking, 
+          and friendly competition.
         </p>
+        <figure class="post-image">
+          <img src="assets/images/habitrack/habitrack1.jpeg" alt="HabiTrack Logo" />
+          <figcaption>HabiTrack Logo</figcaption>
+        </figure>
+
+        <h4>My Role (Precise Responsibilities)</h4>
+        <ul>
+          <li><strong>Developed the interactive prototype</strong> using Figma based on final app flows.</li>
+          <li><strong>Led the research synthesis</strong> from surveys, observation notes, and gallery walk feedback.</li>
+          <li><strong>Constructed the User Journey Map</strong> and refined the persona (“Active Milo”).</li>
+          <li><strong>Translated user pain points</strong> into actionable features.</li>
+          <li><strong>Supported concept clustering</strong> from the initial 15 raw idea directions to the final app concept.</li>
+        </ul>
+    
+    
+        <h4>Core Problem We Addressed</h4>
+        <ul>
+          <li>Youths lack <strong>structured motivation</strong> to maintain healthy habits.</li>
+          <li><strong>Time constraints</strong> and long commuting routes reduce exercise consistency.</li>
+          <li>Most apps focus on advanced fitness goals, not small, achievable weekly habits.</li>
+        </ul>
+    
+        <h4>Key App Features (Based on Real User Input)</h4>
+        <p>
+          Each feature was selected because it directly supports the users’ motivations identified in the SIP findings:
+        </p>
+        <ul>
+          <li><strong>Gamified streaks & points</strong> – keeps engagement high without overwhelming users.</li>
+          <li><strong>Weekly goal-setting</strong> – encourages realistic, achievable health habits.</li>
+          <li><strong>Leaderboard</strong> – competitive motivation for users who enjoy comparing progress.</li>
+          <li><strong>Location-based activity suggestions</strong> – nearby places like parks, tracks, and gyms.</li>
+          <li><strong>Simple task-based routines</strong> – avoids complex fitness plans.</li>
+        </ul>
+    
+        <figure class="post-image">
+          <img src="assets/images/habitrack/habitrack2.jpeg" alt="Mobile App Interface" />
+          <figcaption>Mobile App Interface</figcaption>
+        </figure>
+    
+        <h4>User Research & Validation</h4>
+        <p>
+          Using the User Journey Map and gallery walk insights, we identified exactly what motivates 
+          and discourages youths. Below are the key findings:
+        </p>
+        <ul>
+          <li>Users preferred <strong>short, manageable activity goals</strong> over long workouts.</li>
+          <li><strong>Gamification</strong> was consistently rated as the most engaging element.</li>
+          <li>Clear visual progress and streaks helped maintain commitment.</li>
+          <li>Users requested <strong>reminders</strong> and <strong>simple UI navigation</strong>.</li>
+        </ul>
+    
+        <h4>Outcome</h4>
+        <p>
+          HabiTrack became a well-validated app concept supported by real data, structured research,
+          and a functional prototype. This project strengthened my skills in user-centered design,
+          prototyping, research synthesis, and presenting a complete product concept with clear reasoning.
+        </p>
+
+        <figure class="post-image">
+          <img src="assets/images/habitrack/habitrack.jpeg" alt="Gallery Walk" />
+          <figcaption>Gallery Walk</figcaption>
+        </figure>
+        
       `,
     }
+    
   ];
   
