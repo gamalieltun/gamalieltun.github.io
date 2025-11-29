@@ -89,7 +89,7 @@ const projects = [
           <li>Willingness to Pay: <strong>$40–$60</strong> based on survey results.</li>
           <li>Projected Revenue: <strong>SGD 50k–100k</strong> in Year 1, scaling to <strong>250k–300k</strong> by Year 3.</li>
           <li>Competitive products cost $399–$1050, making SafeStride significantly more accessible.</li>
-        </ul>
+        </ul> 
     
         <div class="project-image">
           <img src="assets/images/safestride3.jpeg" alt="The Prototype" />
