@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gamayio — Gamaliel Tun</title>
-  <meta name="description" content="Videos and content from the Gamayio YouTube channel." />
+  <meta name="description" content="Videos and podcasts from the Gamayio creative channel." />
 
   <meta property="og:title" content="Gamayio — Gamaliel Tun" />
-  <meta property="og:description" content="Selected videos from the Gamayio YouTube Channel." />
+  <meta property="og:description" content="Featured videos and podcast episodes from Gamayio." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gamalieltun.com/gamayio.html" />
 
@@ -45,15 +45,29 @@
     <section class="page-hero">
       <div class="container">
         <h1>Gamayio</h1>
-        <p>Featured videos and creative work from my YouTube channel — <strong>@gamayio</strong>.</p>
+        <p>A space of creativity — featuring videos and podcasts from <strong>@gamayio</strong>.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
+
+        <!-- 🔹 VIDEOS SECTION -->
+        <h2 class="section-title">Videos</h2>
+        <p class="section-subtitle">Stories, reflections, behind-the-scenes, and creative experiments.</p>
+
         <div class="grid-3" id="videoList" aria-live="polite">
           <!-- Filled by videos.js -->
         </div>
+
+        <!-- 🔹 PODCASTS SECTION -->
+        <h2 class="section-title" style="margin-top: 60px;">Podcast</h2>
+        <p class="section-subtitle">Conversations and thoughts with creators across Singapore, Thailand, and Australia.</p>
+
+        <div class="grid-3" id="podcastList" aria-live="polite">
+          <!-- Filled by podcasts.js -->
+        </div>
+
       </div>
     </section>
   </main>
@@ -64,8 +78,14 @@
     </div>
   </footer>
 
+  <!-- 🔹 Load Data Files -->
   <script src="data/videos.js"></script>
+  <script src="data/podcasts.js"></script>
+
+  <!-- 🔹 Core Scripts -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/videos.js"></script>
+  <script src="assets/js/podcasts.js"></script>
+
 </body>
 </html>
