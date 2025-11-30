@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gamayio — Gamaliel Tun</title>
+  <meta name="description" content="Videos and content from the Gamayio YouTube channel." />
+
+  <meta property="og:title" content="Gamayio — Gamaliel Tun" />
+  <meta property="og:description" content="Selected videos from the Gamayio YouTube Channel." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gamalieltun.com/gamayio.html" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Gamaliel Tun</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gamayio.html" class="active">Gamayio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Gamayio</h1>
+        <p>Featured videos and creative work from my YouTube channel — <strong>@gamayio</strong>.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-3" id="videoList" aria-live="polite">
+          <!-- Filled by videos.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Gamaliel Tun. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="data/videos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/videos.js"></script>
+</body>
+</html>
