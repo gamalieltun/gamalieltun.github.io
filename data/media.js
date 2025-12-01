@@ -29,6 +29,13 @@ const mediaItems = [
       category: "video"
     },
     {
+        id: 5,
+        title: "Why I Draw Doodles",
+        url: "https://youtu.be/Z7RMR457GJE?list=PLbs2j6qwidhlyQw5xzFNLbrIBmPQNo_xq",
+        description: "A video about why I draw Doodles",
+        category: "video"
+      },
+    {
       id: 5,
       title: "Episode 3 | We are not students anymore . . . so what's next?",
       url: "https://youtu.be/f3fzx_BciQI?si=K761xf4YVMIZSPGU",
@@ -63,13 +70,7 @@ const mediaItems = [
         url: "https://youtu.be/ep-JI1_HAEs?list=PLbs2j6qwidhkFULJfdGwtS5SyfJ9UGLY_",
         description: "“No One Knew Me Here… So Who Did I Become?” with Solomon Cho.We explore the freedom and challenges of living abroad in your 20s — the identities we leave behind, and the unexpected versions of ourselves we meet along the way.",
         category: "podcast"
-   },
-   {
-    id: 10,
-    title: "Why I Draw Doodles",
-    url: "https://youtu.be/Z7RMR457GJE?list=PLbs2j6qwidhlyQw5xzFNLbrIBmPQNo_xq",
-    description: "A video about why I draw Doodles",
-    category: "video"
-    }   
+    },
+     
 
   ];
