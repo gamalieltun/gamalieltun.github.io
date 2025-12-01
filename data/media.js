@@ -55,13 +55,13 @@ const mediaItems = [
           title: "Episode 6 | When the Spark Goes Quiet: Rediscovering Joy in Creative Silence",
           url: "https://youtu.be/L6hq31_NjfU?list=PLbs2j6qwidhkFULJfdGwtS5SyfJ9UGLY_",
           description: "What happens when the urge to create fades—or when no one is watching? In this conversation with Lamin Thant, we talk about making art for ourselves again, away from pressure and performance.",
-          category: "video"
+          category: "podcast"
      },
      {
         id: 9,
         title: "Episode 7 - No One Knew Me Here… So Who Did I Become?",
         url: "https://youtu.be/ep-JI1_HAEs?list=PLbs2j6qwidhkFULJfdGwtS5SyfJ9UGLY_",
         description: "“No One Knew Me Here… So Who Did I Become?” with Solomon Cho.We explore the freedom and challenges of living abroad in your 20s — the identities we leave behind, and the unexpected versions of ourselves we meet along the way.",
-        category: "video"
+        category: "podcast"
    }
   ];
