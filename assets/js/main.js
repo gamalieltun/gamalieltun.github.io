@@ -26,5 +26,45 @@
         }
       });
     }
+    // === Scroll reveal for "What I Do" cards ===
+document.addEventListener("DOMContentLoaded", function () {
+  const whatCards = document.querySelectorAll("#what-i-do .card");
+  if (!whatCards.length) return;
+
+  // If user prefers reduced motion, show everything without animation
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion) {
+    whatCards.forEach(card => {
+      card.classList.remove("reveal-card");
+      card.classList.add("visible");
+    });
+    return;
+  }
+
+  // Prepare cards with initial hidden state
+  whatCards.forEach(card => {
+    card.classList.add("reveal-card");
+  });
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          // Once visible, stop observing this card
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  whatCards.forEach(card => observer.observe(card));
+});
+
   })();
   
