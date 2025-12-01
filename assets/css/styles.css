@@ -748,68 +748,24 @@
   
 
 
-  /* WHAT I DO – Scroll + hover animations */
+ /* Base card styles stay as you originally had them */
+/* We only add transition + reveal states here */
+
+/* Smooth transition for all cards in What I Do */
 #what-i-do .card {
-  position: relative;
-  border-radius: 16px;
-  padding: 1.75rem;
-  overflow: hidden;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    background-color 0.35s ease;
-  background-color: #ffffff;
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* Initial hidden state for scroll reveal */
+/* Hidden state before scrolling into view */
 #what-i-do .card.reveal-card {
   opacity: 0;
-  transform: translateY(20px) scale(0.98);
+  transform: translateY(20px);
 }
 
-/* Visible state when scrolled into view */
+/* Visible state when JS adds .visible */
 #what-i-do .card.reveal-card.visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
-    box-shadow 0.35s ease,
-    background-color 0.35s ease;
+  transform: translateY(0);
 }
 
-/* Hover effect – subtle lift & glow */
-#what-i-do .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-  background-color: #f9fafb;
-}
 
-/* Optional: soft animated border glow */
-#what-i-do .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1px solid rgba(120, 120, 255, 0.25);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-#what-i-do .card:hover::before {
-  opacity: 1;
-}
-
-/* Slight stagger via nth-child (delay only affects transition start) */
-#what-i-do .card.reveal-card:nth-child(1).visible {
-  transition-delay: 0.0s;
-}
-
-#what-i-do .card.reveal-card:nth-child(2).visible {
-  transition-delay: 0.1s;
-}
-
-#what-i-do .card.reveal-card:nth-child(3).visible {
-  transition-delay: 0.2s;
-}
