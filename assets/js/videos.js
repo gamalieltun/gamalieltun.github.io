@@ -33,6 +33,17 @@ function extractYouTubeId(url) {
 }
 
 function renderVideos() {
+  if (!videoContainer) {
+    console.error("Video container not found!");
+    return;
+  }
+
+  if (typeof videos === 'undefined') {
+    console.error("Videos data not loaded!");
+    videoContainer.innerHTML = '<p style="color:red;">Error: Video data not loaded. Make sure data/videos.js is loaded first.</p>';
+    return;
+  }
+
   videoContainer.innerHTML = videos
     .map((video) => {
       const id = extractYouTubeId(video.url);
@@ -63,4 +74,9 @@ function renderVideos() {
     .join("");
 }
 
-document.addEventListener("DOMContentLoaded", renderVideos);
+// Call render function when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", renderVideos);
+} else {
+  renderVideos();
+}
