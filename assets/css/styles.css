@@ -769,3 +769,338 @@
 }
 
 
+/* ============================================
+   ENHANCED LANDING PAGE STYLES
+   Add these styles to the END of your styles.css file
+   ============================================ */
+
+/* Animated gradient background */
+body {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 88, 79, 0.15), transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.1), transparent 50%),
+    var(--color-bg);
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(20deg); }
+}
+
+/* Floating particles background */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 88, 79, 0.3);
+  border-radius: 50%;
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Hero Section */
+.hero {
+  position: relative;
+  z-index: 2;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.hero-text {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-kicker {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.hero h1 {
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.4s forwards;
+  background: linear-gradient(135deg, #fff 0%, #d1d0d1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+.hero-body {
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.8s forwards;
+}
+
+.hero-actions {
+  opacity: 0;
+  animation: fadeInUp 1s ease 1s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated typing effect for hero text */
+.typing-text {
+  display: inline-block;
+  border-right: 2px solid var(--color-primary);
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Enhanced hero image */
+.hero-image-wrapper {
+  opacity: 0;
+  animation: fadeInScale 1.2s ease 0.5s forwards;
+  position: relative;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-image {
+  transition: transform 0.6s ease;
+}
+
+.hero-image-wrapper:hover .hero-image {
+  transform: scale(1.05);
+}
+
+.hero-image-overlay {
+  transition: all 0.6s ease;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Glowing effect behind image */
+.hero-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(255, 88, 79, 0.4), transparent 70%);
+  z-index: -1;
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* Enhanced Buttons */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn.primary {
+  box-shadow: 0 12px 30px rgba(255, 88, 79, 0.35);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(255, 88, 79, 0.45);
+}
+
+.btn.secondary {
+  backdrop-filter: blur(10px);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fadeIn 1s ease 1.5s forwards, bounce 2s ease-in-out 2s infinite;
+}
+
+.scroll-indicator-line {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-primary), transparent);
+  margin: 0 auto 0.5rem;
+}
+
+.scroll-indicator-text {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Enhanced What I Do Cards */
+#what-i-do .card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+#what-i-do .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 88, 79, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+#what-i-do .card:hover::before {
+  left: 100%;
+}
+
+#what-i-do .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(255, 88, 79, 0.2);
+  border-color: rgba(255, 88, 79, 0.4);
+}
+
+/* Staggered card reveal */
+#what-i-do .card:nth-child(1) { animation-delay: 0.1s; }
+#what-i-do .card:nth-child(2) { animation-delay: 0.2s; }
+#what-i-do .card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Section titles with underline effect */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  transition: width 0.8s ease;
+}
+
+.section-title.in-view::after {
+  width: 100%;
+}
+
+/* Project cards hover effects */
+.project-card, .blog-card {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.project-card:hover, .blog-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Parallax scroll effect */
+.parallax-section {
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+  }
+  
+  .scroll-indicator {
+    display: none;
+  }
+}
