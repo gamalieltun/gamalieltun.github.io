@@ -35,6 +35,13 @@ const mediaItems = [
         description: "A video about why I draw Doodles",
         category: "video"
       },
+      {
+        id: 5,
+        title: "Two Artists Two Worlds One Inspiration | Kim Jung Gi and Kyar Pauk",
+        url: "https://youtu.be/I29gHTlqmvo?si=UTZIepQ_nIQsYHeV",
+        description: "This is my tribute to Kim Jung Gi & Kyar Pauk —the two artists who changed how I create.",
+        category: "video"
+      },
     {
       id: 5,
       title: "Episode 3 | We are not students anymore . . . so what's next?",
