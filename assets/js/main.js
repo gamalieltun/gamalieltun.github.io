@@ -1,78 +1,79 @@
-// main.js
-// Handles mobile nav toggle + footer year + scroll animations
+// main.js — mobile nav toggle + footer year
+// No scroll listeners, no parallax, no double observers
 
 (function () {
-  const navToggle = document.getElementById("navToggle");
-  const siteNav = document.getElementById("siteNav");
-  const yearSpan = document.getElementById("year");
+  'use strict';
 
-  // ============================
-  // 1. Set footer year
-  // ============================
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+  // ── Footer year ─────────────────────────────
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ============================
-  // 2. Mobile nav toggle
-  // ============================
+  // ── Mobile nav toggle ────────────────────────
+  var navToggle = document.getElementById('navToggle');
+  var siteNav   = document.getElementById('siteNav');
+
   if (navToggle && siteNav) {
-    navToggle.addEventListener("click", function () {
-      const isOpen = siteNav.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    navToggle.addEventListener('click', function () {
+      var isOpen = siteNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // Close menu when clicking a link
-    siteNav.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") {
-        siteNav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
+    // Close when any nav link is tapped
+    siteNav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        siteNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (!siteNav.contains(e.target) && !navToggle.contains(e.target)) {
+        siteNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
-  // ============================
-  // 3. WHAT I DO – Scroll Reveal
-  // ============================
-  function initWhatIDoReveal() {
-    const cards = document.querySelectorAll("#what-i-do .card");
-    if (!cards.length) return;
+  // ── Scroll reveal (shared utility) ──────────
+  // Only runs if IntersectionObserver is available and
+  // the inline page script hasn't already set things up.
+  // We use a flag on window to avoid double-observing.
+  if (!window._revealObserverInit && 'IntersectionObserver' in window) {
+    window._revealObserverInit = true;
 
-    // Add initial "hidden" state
-    cards.forEach(card => card.classList.add("reveal-card"));
+    var revealObs = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target); // animate once only
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    const prefersReducedMotion =
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var titleObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.3 });
 
-    // If reduced motion or IntersectionObserver unsupported → show instantly
-    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-      cards.forEach(card => card.classList.add("visible"));
-      return;
-    }
+    // Observe cards that exist at load time
+    document.querySelectorAll('.reveal-card').forEach(function (el) {
+      revealObs.observe(el);
+    });
 
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            obs.unobserve(entry.target); // Animate only once
-          }
-        });
-      },
-      {
-        threshold: 0.2
-      }
-    );
+    document.querySelectorAll('.section-title').forEach(function (el) {
+      titleObs.observe(el);
+    });
 
-    cards.forEach(card => observer.observe(card));
-  }
-
-  // Run animation after DOM is ready
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initWhatIDoReveal);
-  } else {
-    initWhatIDoReveal();
+  } else if (!('IntersectionObserver' in window)) {
+    // Instant fallback for old browsers
+    document.querySelectorAll('.reveal-card').forEach(function (el) {
+      el.classList.add('visible');
+    });
+    document.querySelectorAll('.section-title').forEach(function (el) {
+      el.classList.add('in-view');
+    });
   }
 
 })();

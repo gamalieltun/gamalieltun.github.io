@@ -4,74 +4,185 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Gamaliel Tun</title>
-  <meta name="description" content="Selected projects by [Your Name]." />
-
+  <meta name="description" content="Selected projects by Gamaliel Tun." />
   <meta property="og:title" content="Projects — Gamaliel Tun" />
   <meta property="og:description" content="Selected projects by Gamaliel Tun." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.com/portfolio.html" />
-
-  <!-- Favicon -->
+  <meta property="og:url" content="https://gamalieltun.com/portfolio.html" />
   <link rel="icon" type="image/png" href="assets/images/logo.png" />
   <link rel="shortcut icon" type="image/png" href="assets/images/logo.png" />
   <link rel="apple-touch-icon" href="assets/images/logo.png" />
-
-  <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-          <a href="index.html" class="logo">Gamaliel Tun</a>
-      
-          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-          </button>
-      
-          <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="portfolio.html" class="active">Projects</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="gamayio.html">Gamayio</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Gamaliel Tun</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html" class="active">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gamayio.html">Gamayio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <section class="page-hero">
+
+    <section class="page-hero" data-label="WORK">
       <div class="container">
+        <p class="mono" style="margin-bottom: 0.5rem;">Selected Work</p>
         <h1>Projects</h1>
-        <p>A curated selection of work that represents my interests and skills.</p>
+        <p>A curated selection of systems, tools, and experiments.</p>
       </div>
     </section>
+
+    <!-- Filter bar -->
+    <div class="portfolio-filter-bar">
+      <div class="container">
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Web">Web</button>
+          <button class="filter-btn" data-filter="Embedded">Embedded</button>
+          <button class="filter-btn" data-filter="Cloud">Cloud</button>
+          <button class="filter-btn" data-filter="Mobile">Mobile</button>
+        </div>
+      </div>
+    </div>
 
     <section class="section">
       <div class="container">
-        <!-- Dynamic project cards will be injected here -->
         <div class="grid-3" id="projectList" aria-live="polite">
-          <!-- Filled by assets/js/projects.js -->
+          <!-- Filled by projects.js -->
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <p class="mono">No projects match this filter.</p>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Gamaliel Tun. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/gamalieltun/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/gamalieltun" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
   </footer>
 
   <script src="data/projects.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/projects.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Filter logic ────────────────────────────
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        const cards = document.querySelectorAll('#projectList .card');
+        let visible = 0;
+        cards.forEach(card => {
+          const tags = card.dataset.tags || '';
+          const show = filter === 'all' || tags.toLowerCase().includes(filter.toLowerCase());
+          card.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+
+        document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+      });
+    });
+
+    // ── Card reveal ──────────────────────────────
+    const cardObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-card').forEach(el => cardObs.observe(el));
+  </script>
+
+  <!-- projects.js needs to tag cards for filter to work —
+       we patch the render function to add data-tags via a MutationObserver -->
+  <script>
+    // Watch for injected cards and add data-tags attribute + reveal-card class
+    const projObs = new MutationObserver(() => {
+      document.querySelectorAll('#projectList .card:not([data-tags])').forEach(card => {
+        const tagEls = card.querySelectorAll('.tag');
+        const tags = Array.from(tagEls).map(t => t.textContent).join(',');
+        card.dataset.tags = tags;
+        card.classList.add('reveal-card');
+        cardObs.observe(card);
+      });
+    });
+    projObs.observe(document.getElementById('projectList'), { childList: true });
+  </script>
+
+<style>
+/* ── Portfolio-specific styles ── */
+.portfolio-filter-bar {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+  position: sticky;
+  top: 58px;
+  z-index: 50;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filter-controls::-webkit-scrollbar { display: none; }
+
+.filter-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  cursor: pointer;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.filter-btn:hover { color: var(--ink); }
+.filter-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--ink-3);
+}
+</style>
+
 </body>
 </html>
