@@ -375,7 +375,102 @@ const projects = [
           <figcaption>Wai Yan and I with the prototype</figcaption>
         </figure>
       `,
-    }
+      
+    },
+    {
+      id: 5,
+      slug: "pdd-dashboard",
+      title: "PDD Dashboard — Church of the Province of Myanmar",
+      role: "System Architect & Developer (Provincial Digital Development Officer)",
+      year: 2026,
+      tags: ["Web", "Cloud", "Fullstack", "Automation"],
+      tech: [
+        "Cloudflare Workers",
+        "Google Sheets API",
+        "Google Drive API",
+        "Gmail API",
+        "OAuth2",
+        "HTML5",
+        "CSS3",
+        "Vanilla JavaScript"
+      ],
+      summary:
+        "A centralised digital management system built for the Church of the Province of Myanmar's Programme Development Department — replacing manual Excel workflows with a full-stack dashboard for finance, reporting, task management, and automated email notifications.",
+      featuredImage: "/assets/images/pdd.jpeg",
+      liveUrl: "#",
+      repoUrl: "#",
+      description: `
+    
+        <p>
+          The <strong>PDD Dashboard</strong> is a single-tenant web application built for the 
+          <strong>Church of the Province of Myanmar — Province Development Department (CPMPDD)</strong>.
+          It was designed and developed entirely by me in my role as <strong>Provincial Digital Development Officer</strong>,
+          with one clear mandate: digitalize the department's internal workflows without disrupting any existing 
+          initiatives, systems, or people already operating in the organisation.
+        </p>
+    
+        <p>
+          Before this system, the department relied heavily on manual Excel files and informal email chains 
+          to manage programme data, track expenditure, generate donor reports, and coordinate staff across 
+          multiple dioceses in Myanmar. The PDP Dashboard replaces all of that with a structured, 
+          role-aware platform — built on zero-cost infrastructure and designed to be maintainable 
+          without a dedicated IT team.
+        </p>
+    
+        <h4>What It Does</h4>
+        <ul>
+          <li><strong>Finance Module</strong> — Full budget lifecycle: create budgets, attach international donors (ABM, TearFund, USPG, ARDF, ERD), log quarterly expenditure, approve or reject submissions, and generate formatted financial reports directly to Google Drive.</li>
+          <li><strong>Report Generation</strong> — Four report types (budget, donor, diocese, consolidated) built to match the ABM Joint Budget and Reporting Template exactly — with FX columns for AUD, GBP, and USD where exchange rates are set.</li>
+          <li><strong>Programme & Task Management</strong> — Create programmes, projects, and tasks. Assign staff. Track status and completion across five active programmes.</li>
+          <li><strong>DCR Reports</strong> — Staff submit Daily, Monthly, Biannual, and Annual reports through a guided form. Each submission saves a structured JSON file and a human-readable Google Doc to Drive automatically.</li>
+          <li><strong>Email Notifications</strong> — 11 notification event types (expense submissions, approvals, task assignments, weekly check-in reminders, and more) delivered via Gmail API with per-user opt-out support.</li>
+          <li><strong>Role-Based Access Control</strong> — Five roles (Admin, Manager, Finance Manager, Finance Staff, Staff) with diocese-level data scoping. Finance staff never see data from other dioceses.</li>
+          <li><strong>Weekly Check-ins</strong> — Staff submit structured check-in reports each week referenced to calendar week numbers. Managers receive immediate notifications.</li>
+        </ul>
+    
+        <h4>Architecture</h4>
+        <p>
+          The entire backend runs as a <strong>single Cloudflare Worker</strong> (v3.2.6 — 3,720 lines, 42 actions) 
+          with no server to manage, no cold start, and global edge deployment. The frontend is 
+          three plain HTML files with no framework and no build step — intentionally simple so that 
+          anyone can maintain or update it. All data lives in <strong>Google Sheets</strong> 
+          (the organisation already had Google Workspace), and all file outputs go to 
+          <strong>Google Drive</strong>. The only external cost is zero.
+        </p>
+    
+        <ul>
+          <li><strong>Frontend</strong> — <code>index.html</code> (10 tabs, 5,013 lines), <code>finance.html</code> (8 panes, 2,391 lines), <code>dcr_form.html</code> (4-step form, 1,947 lines)</li>
+          <li><strong>Backend</strong> — Cloudflare Worker (V8 strict mode). All Google API calls made server-side. CORS always returned. Auth validated on every single request.</li>
+          <li><strong>Data</strong> — Two Google Sheets workbooks: <code>PDP_Data.xlsx</code> for programmes/tasks/users, and a Finance Spreadsheet with five relational tables (Donors, Budgets, Budget_Donors, Line_Items, Expenditures).</li>
+          <li><strong>Auth</strong> — Credential-based with hashed passwords stored in a Cloudflare Worker secret. No third-party auth service required.</li>
+        </ul>
+    
+        <h4>Design Principles</h4>
+        <ul>
+          <li><strong>Non-disruptive by design.</strong> The system was built around the organisation's existing Google Workspace setup. No new accounts, no new platforms, no migration of existing data unless chosen.</li>
+          <li><strong>All amounts in MMK.</strong> Exchange rates are locked at the time a donor is attached to a budget — no live rate recalculation, no ambiguity in reporting.</li>
+          <li><strong>Soft deletes only.</strong> No records are ever hard-deleted. Line items prefixed with <code>[DELETED]</code> remain visible to preserve expenditure history and audit integrity.</li>
+          <li><strong>Diocese scoping at the worker level.</strong> Finance staff data is filtered server-side — the client never receives records from other dioceses, regardless of what the browser requests.</li>
+          <li><strong>Fire-and-forget email.</strong> Notification failures are logged but never thrown — the main workflow is never blocked by an email error.</li>
+        </ul>
+    
+        <h4>Key Challenges</h4>
+        <ul>
+          <li><strong>Multi-currency reporting</strong> — Building FX-aware report columns that appear only when a reference rate exists, across four different report types, required careful conditional logic at the row and column level.</li>
+          <li><strong>Google Sheets as a relational store</strong> — Designing a five-table schema (with donor splits stored as JSON within a single cell) that stays maintainable without a real database took significant iteration.</li>
+          <li><strong>Email notification reliability</strong> — Ensuring at least one recipient always gets notified (via <code>ALERT_EMAIL_TO</code> fallback) while still resolving the correct role-based recipients from a JSON user store.</li>
+          <li><strong>Zero-infrastructure constraint</strong> — The entire system had to run within free-tier Cloudflare Workers and Google Workspace limits, with no VPS, no database, and no ongoing server cost.</li>
+          <li><strong>Organisational sensitivity</strong> — Working inside a church institution meant every feature had to be introduced carefully, respecting existing hierarchies, workflows, and the people already doing this work manually.</li>
+        </ul>
+    
+        <p>
+          The PDP Dashboard is currently live and in active use by the CPMPDD team across Myanmar. 
+          It represents my ongoing freelance work as Provincial Digital Development Officer — 
+          a project I designed, built, deployed, and continue to maintain independently.
+        </p>
+    
+      `,
+    },
     
     
   

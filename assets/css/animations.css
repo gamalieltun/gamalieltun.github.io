@@ -1,0 +1,398 @@
+/* ============================================================
+   GAMALIEL TUN — ANIMATION LAYER
+   Drop into assets/css/animations.css
+   Link AFTER styles.css in every HTML file
+   ============================================================ */
+
+/* ── 1. ANIMATED BACKGROUND ──────────────────────────────── */
+
+/* Orbiting red orbs behind everything */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 600px 400px at 15% 20%,  rgba(232,57,42,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 500px at 85% 75%,  rgba(232,57,42,0.05) 0%, transparent 70%),
+      radial-gradient(ellipse 300px 300px at 50% 50%,  rgba(240,237,232,0.02) 0%, transparent 70%);
+    animation: orb-drift 18s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  @keyframes orb-drift {
+    0%   { transform: translate(0, 0) scale(1); }
+    33%  { transform: translate(40px, -30px) scale(1.05); }
+    66%  { transform: translate(-25px, 20px) scale(0.97); }
+    100% { transform: translate(20px, 40px) scale(1.03); }
+  }
+  
+  /* Scanning line — subtle horizontal sweep every 8s */
+  body {
+    position: relative;
+  }
+  
+  .scan-line {
+    position: fixed;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(232,57,42,0.0) 20%,
+      rgba(232,57,42,0.4) 50%,
+      rgba(232,57,42,0.0) 80%,
+      transparent 100%
+    );
+    z-index: 9998;
+    pointer-events: none;
+    animation: scan 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation-delay: 2s;
+  }
+  
+  @keyframes scan {
+    0%   { top: -2px; opacity: 0; }
+    2%   { opacity: 1; }
+    98%  { opacity: 0.6; }
+    100% { top: 100vh; opacity: 0; }
+  }
+  
+  /* ── 2. HERO SECTION ─────────────────────────────────────── */
+  
+  /* Hero h1 — each word slides in from a different axis */
+  .hero h1 .name-first {
+    display: inline-block;
+    animation: hero-word-left 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  }
+  
+  .hero h1 .name-last {
+    display: inline-block;
+    animation: hero-word-right 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+  }
+  
+  @keyframes hero-word-left {
+    from { opacity: 0; transform: translateX(-60px) skewX(8deg); }
+    to   { opacity: 1; transform: translateX(0) skewX(0); }
+  }
+  
+  @keyframes hero-word-right {
+    from { opacity: 0; transform: translateX(60px) skewX(-8deg); }
+    to   { opacity: 1; transform: translateX(0) skewX(0); }
+  }
+  
+  /* Hero image — glitch flicker on load */
+  .hero-image {
+    animation: img-appear 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both, glitch-in 0.6s steps(1) 0.6s both;
+  }
+  
+  @keyframes img-appear {
+    from { opacity: 0; transform: scale(1.04); filter: grayscale(100%) brightness(0.4); }
+    to   { opacity: 1; transform: scale(1);    filter: grayscale(20%) brightness(1); }
+  }
+  
+  @keyframes glitch-in {
+    0%   { clip-path: inset(0 0 100% 0); }
+    20%  { clip-path: inset(0 0 60% 0); }
+    40%  { clip-path: inset(0 0 80% 0); }
+    60%  { clip-path: inset(0 0 30% 0); }
+    80%  { clip-path: inset(0 0 10% 0); }
+    100% { clip-path: inset(0 0 0% 0); }
+  }
+  
+  /* Hero image — persistent slow red glitch on hover */
+  .hero-image-wrapper:hover .hero-image {
+    animation: glitch-loop 0.3s steps(2) infinite;
+  }
+  
+  @keyframes glitch-loop {
+    0%   { transform: translate(0,0) skewX(0); filter: grayscale(0%) contrast(1.1); }
+    25%  { transform: translate(-3px, 1px) skewX(-1deg); filter: grayscale(10%) contrast(1.2) hue-rotate(5deg); }
+    50%  { transform: translate(3px, -1px) skewX(1deg);  filter: grayscale(5%) contrast(1.15); }
+    75%  { transform: translate(-2px, 2px) skewX(0.5deg); }
+    100% { transform: translate(0,0) skewX(0); filter: grayscale(0%) contrast(1.1); }
+  }
+  
+  /* Red corner accent draw-in */
+  .hero-image-overlay {
+    animation: corner-draw 1s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+  }
+  
+  @keyframes corner-draw {
+    from { opacity: 0; clip-path: polygon(0 0, 5% 0, 5% 1px, 0 1px, 0 10%, 1px 10%, 1px 5%, 0 5%); }
+    to   { opacity: 1; clip-path: polygon(0 0, 30% 0, 30% 1px, 0 1px, 0 100%, 1px 100%, 1px 30%, 0 30%); }
+  }
+  
+  /* Kicker — morse dash reveal */
+  .hero-kicker {
+    overflow: hidden;
+    animation: kicker-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  }
+  
+  @keyframes kicker-in {
+    from { opacity: 0; transform: translateY(10px); letter-spacing: 0.5em; }
+    to   { opacity: 1; transform: translateY(0);    letter-spacing: 0.22em; }
+  }
+  
+  /* Hero subtitle + body stagger */
+  .hero-subtitle {
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+  }
+  
+  .hero-body {
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
+  }
+  
+  .hero-actions {
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+  }
+  
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ── 3. MAGNETIC BUTTONS ─────────────────────────────────── */
+  
+  .btn {
+    transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.2s ease,
+                background 0.18s ease,
+                border-color 0.18s ease;
+    will-change: transform;
+  }
+  
+  /* Ripple burst on click */
+  .btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: inherit;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s;
+  }
+  
+  .btn:active::after {
+    transform: scale(2.5);
+    opacity: 0;
+    transition: 0s;
+  }
+  
+  /* ── 4. CARDS ─────────────────────────────────────────────── */
+  
+  /* Red top-line sweep already in styles.css — add a shimmer too */
+  .card {
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s ease,
+      border-color 0.3s ease;
+    overflow: hidden;
+  }
+  
+  /* Diagonal shimmer on hover */
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(240,237,232,0.04) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0s;
+    pointer-events: none;
+  }
+  
+  .card:hover::after {
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* ── 5. SECTION TITLES ───────────────────────────────────── */
+  
+  .section-title {
+    animation: none; /* controlled by JS intersection */
+  }
+  
+  /* Stagger children of grids on reveal */
+  .grid-3 .card:nth-child(1) { transition-delay: 0.05s; }
+  .grid-3 .card:nth-child(2) { transition-delay: 0.14s; }
+  .grid-3 .card:nth-child(3) { transition-delay: 0.23s; }
+  .grid-3 .card:nth-child(4) { transition-delay: 0.08s; }
+  .grid-3 .card:nth-child(5) { transition-delay: 0.17s; }
+  .grid-3 .card:nth-child(6) { transition-delay: 0.26s; }
+  
+  /* ── 6. NAV LINK HOVER — ink wipe ───────────────────────── */
+  
+  .site-nav a {
+    background-image: linear-gradient(var(--ink), var(--ink));
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.18s;
+  }
+  
+  .site-nav a:hover,
+  .site-nav a.active {
+    background-size: 100% 1px;
+  }
+  
+  /* Override the pseudo-element underline from styles.css */
+  .site-nav a::after { display: none; }
+  
+  /* ── 7. LOGO — flicker on load ───────────────────────────── */
+  
+  .logo {
+    animation: logo-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+  }
+  
+  @keyframes logo-in {
+    0%   { opacity: 0; letter-spacing: 0.35em; }
+    60%  { opacity: 0.7; letter-spacing: 0.08em; }
+    100% { opacity: 1; letter-spacing: 0.12em; }
+  }
+  
+  /* ── 8. PAGE HERO (inner pages) — ghost text float ──────── */
+  
+  .page-hero::before {
+    animation: ghost-float 12s ease-in-out infinite alternate;
+  }
+  
+  @keyframes ghost-float {
+    from { transform: translateY(-50%) translateX(20%); }
+    to   { transform: translateY(calc(-50% - 20px)) translateX(22%); }
+  }
+  
+  /* ── 9. STATS BAR COUNT-UP (triggered via JS) ────────────── */
+  
+  .stat-num {
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity  0.6s ease;
+  }
+  
+  .stat-num.counting {
+    animation: count-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  @keyframes count-pop {
+    0%   { transform: scale(1.3); opacity: 0; }
+    100% { transform: scale(1);   opacity: 1; }
+  }
+  
+  /* ── 10. TIMELINE (about page) ───────────────────────────── */
+  
+  .tl-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .tl-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Stagger timeline items */
+  .tl-item:nth-child(1) { transition-delay: 0.05s; }
+  .tl-item:nth-child(2) { transition-delay: 0.14s; }
+  .tl-item:nth-child(3) { transition-delay: 0.23s; }
+  .tl-item:nth-child(4) { transition-delay: 0.32s; }
+  .tl-item:nth-child(5) { transition-delay: 0.41s; }
+  
+  /* Timeline dot pulse */
+  .tl-item::before {
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+  
+  .tl-item.visible::before {
+    box-shadow: 0 0 0 3px var(--red), 0 0 12px var(--red-glow);
+  }
+  
+  /* ── 11. CURSOR GLOW ─────────────────────────────────────── */
+  
+  #cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,57,42,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: opacity 0.4s ease;
+    will-change: left, top;
+  }
+  
+  /* ── 12. CTA STRIP — slow burn ───────────────────────────── */
+  
+  .cta-strip::before {
+    animation: cta-burn 6s ease-in-out infinite alternate;
+  }
+  
+  @keyframes cta-burn {
+    from { opacity: 0.6; transform: scale(1); }
+    to   { opacity: 1;   transform: scale(1.04); }
+  }
+  
+  /* ── 13. SCROLL INDICATOR ────────────────────────────────── */
+  
+  .scroll-indicator {
+    animation: fade-in 1s ease 2s both;
+  }
+  
+  .scroll-indicator-line {
+    animation: scroll-drip 2.2s cubic-bezier(0.4, 0, 0.6, 1) 2.2s infinite;
+  }
+  
+  @keyframes scroll-drip {
+    0%   { transform: scaleY(0); transform-origin: top;    opacity: 1; }
+    49%  { transform: scaleY(1); transform-origin: top;    opacity: 1; }
+    50%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+    100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* ── 14. CARD IMAGE — color-reveal on hover ──────────────── */
+  
+  .blog-card-image img {
+    filter: grayscale(60%) brightness(0.85);
+    transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .card:hover .blog-card-image img {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.06);
+  }
+  
+  /* ── 15. FOOTER LINKS — each shifts up ──────────────────── */
+  
+  .footer-links a {
+    display: inline-block;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.18s;
+  }
+  
+  .footer-links a:hover {
+    transform: translateY(-3px);
+    color: var(--red);
+  }
+  
+  /* ── REDUCED MOTION OVERRIDE ─────────────────────────────── */
+  
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .scan-line { display: none; }
+    #cursor-glow { display: none; }
+  }
