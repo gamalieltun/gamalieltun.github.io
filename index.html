@@ -3,330 +3,269 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gamaliel Tun — Home</title>
-<meta name="description" content="Computer Engineering Graduate & Digital Development Officer" />
+<title>Gamaliel Tun — Engineer · Consultant · Builder</title>
+<meta name="description" content="Computer engineer and digital consultant building full-stack systems, embedded tools, and creative work across Singapore and Myanmar." />
 <meta property="og:title" content="Gamaliel Tun" />
-<meta property="og:description" content="Computer Engineering Graduate & Digital Development Officer" />
+<meta property="og:description" content="Engineer. Consultant. Builder of things that last." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gamalieltun.com/" />
-<meta property="og:image" content="assets/images/og-image.jpg" />
 <link rel="icon" type="image/png" href="assets/images/logo.png" />
-<link rel="shortcut icon" type="image/png" href="assets/images/logo.png" />
-<link rel="apple-touch-icon" href="assets/images/logo.png" />
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="assets/css/animations.css" />
 </head>
 <body>
 
+<!-- ── HEADER ─────────────────────────────────────────── -->
 <header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo">Gamaliel Tun</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <span class="logo-block">GT</span>
+      <span class="logo-name">Gamaliel Tun</span>
+    </a>
+    <div class="nav-right">
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#creative">Creative</a></li>
+          <li><a href="blog.html">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <span class="open-badge">
+        <span class="open-dot"></span>Open to roles
+      </span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
     </button>
-    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Projects</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="gamayio.html">Gamayio</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
 <main>
-  <!-- ── HERO ────────────────────────────────── -->
-  <section class="hero">
-    <div class="container hero-inner">
 
-      <div class="hero-text">
-        <p class="hero-kicker">Hello, I'm</p>
-        <h1>
-          <span class="name-first typing-text">Gamaliel</span><br>
-          <span class="name-last">Tun</span>
-        </h1>
-        <p class="hero-subtitle">Engineer. Consultant. Builder of things that last.</p>
-        <p class="hero-body">
-          I design and ship full-stack systems, embedded tools, and digital infrastructure —
-          independently, across Singapore and Myanmar. Currently consulting for the Church of
-          the Province of Myanmar while looking for my next full-time engineering role.
-        </p>
-        <div class="hero-actions">
-          <a href="portfolio.html" class="btn primary">View My Work</a>
-          <a href="about.html" class="btn secondary">About Me</a>
-        </div>
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section id="top" class="hero" style="padding:78px 36px 64px;">
+    <div style="position:relative;z-index:2;">
+      <div class="hero-kicker">Engineer &nbsp;·&nbsp; Consultant &nbsp;·&nbsp; Builder &nbsp;—&nbsp; SG / MM</div>
+      <h1>Gamaliel<br>Tun</h1>
+      <p class="hero-tagline">Builder of things that <em>last</em>.</p>
+      <p class="hero-body">
+        I design and ship full-stack systems, embedded tools, and digital infrastructure —
+        independently, across Singapore and Myanmar. Currently consulting for the Church of
+        the Province of Myanmar while looking for my next full-time engineering role.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-dark">View my work →</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
-
-      <div class="hero-image-wrapper">
-        <div class="hero-image-overlay"></div>
-        <img src="assets/images/gamalieltunprofile.jpeg" alt="Gamaliel Tun" class="hero-image" />
-      </div>
-
     </div>
-
-    <div class="scroll-indicator">
-      <div class="scroll-indicator-line"></div>
-      <p class="scroll-indicator-text">Scroll</p>
+    <div class="hero-image">
+      <img src="assets/images/gamalieltunprofile.jpeg" alt="Gamaliel Tun" />
     </div>
   </section>
 
-  <!-- ── STATS BAR ─────────────────────────────── -->
+  <!-- ── STATS BAR ──────────────────────────────────────── -->
   <div class="stats-bar">
-    <div class="container stats-inner">
-      <div class="stat">
-        <span class="stat-num">3+</span>
-        <span class="stat-label">Years Building</span>
+    <div class="grid-4" style="max-width:1200px;margin:0 auto;">
+      <div>
+        <div class="stat-n">3+</div>
+        <div class="stat-l">Years building</div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num">20+</span>
-        <span class="stat-label">Projects Shipped</span>
+      <div>
+        <div class="stat-n">20+</div>
+        <div class="stat-l">Projects shipped</div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num">2</span>
-        <span class="stat-label">Countries</span>
+      <div>
+        <div class="stat-n">2</div>
+        <div class="stat-l">Countries</div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num">∞</span>
-        <span class="stat-label">Problems to Solve</span>
+      <div>
+        <div class="stat-n">∞</div>
+        <div class="stat-l">Problems to solve</div>
       </div>
     </div>
   </div>
 
-  <!-- ── WHAT I DO ──────────────────────────────── -->
-  <section class="section" id="what-i-do">
-    <div class="container">
-      <h2 class="section-title">What I Do</h2>
-      <div class="grid-3" style="margin-top: 2.5rem;">
-
-        <article class="card what-card reveal-card">
-          <div class="card-number mono">01</div>
-          <h3>Engineering</h3>
-          <p>Full-stack development, embedded systems, and cloud infrastructure. I build things that actually work.</p>
-        </article>
-
-        <article class="card what-card reveal-card">
-          <div class="card-number mono">02</div>
-          <h3>Digital Strategy</h3>
-          <p>Driving organizational digitalization — from workflow automation to dashboard systems for real-world NGOs.</p>
-        </article>
-
-        <article class="card what-card reveal-card">
-          <div class="card-number mono">03</div>
-          <h3>Creative Work</h3>
-          <p>Abstract art, filmmaking, and podcasting through Gamayio — a personal creative lab at the intersection of story and technology.</p>
-        </article>
-
+  <!-- ── SERVICES ───────────────────────────────────────── -->
+  <section class="section" style="padding:92px 36px;">
+    <div class="section-head">
+      <div class="label-num">(01) — What I do</div>
+      <h2 style="max-width:18ch;">Engineering, strategy, and a creative streak.</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-no">01</div>
+        <h3>Engineering</h3>
+        <p>Full-stack development, embedded systems, and cloud infrastructure. I build things that actually work in production.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-no">02</div>
+        <h3>Digital Strategy</h3>
+        <p>Driving organisational digitalization — from workflow automation to dashboard systems for real-world NGOs and institutions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-no">03</div>
+        <h3>Creative Work</h3>
+        <p>Abstract art, filmmaking, and podcasting through Gamayio — a creative lab at the intersection of story and technology.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── FEATURED PROJECTS ─────────────────────── -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <a href="portfolio.html" class="section-link">All projects →</a>
-      </div>
-      <div class="grid-3" id="homeProjects">
-        <!-- Filled by projects.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ── LATEST BLOG ───────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Latest Writing</h2>
-        <a href="blog.html" class="section-link">All posts →</a>
-      </div>
-      <div class="grid-3" id="latestPosts">
-        <!-- Filled by blog.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CTA STRIP ─────────────────────────────── -->
-  <section class="cta-strip">
-    <div class="container cta-inner">
+  <!-- ── WORK ───────────────────────────────────────────── -->
+  <section id="work" class="section" style="padding:92px 36px;">
+    <div class="section-head-row">
       <div>
-        <p class="mono" style="margin-bottom:0.4rem;">Ready to build something?</p>
-        <h2 class="cta-heading">Let's Work Together</h2>
+        <div class="label-num">(02) — Selected work</div>
+        <h2 style="margin:0;max-width:16ch;">Systems, tools &amp; experiments.</h2>
       </div>
-      <a href="contact.html" class="btn primary">Get In Touch</a>
+      <a href="portfolio.html" class="link-underline">Full portfolio →</a>
+    </div>
+
+    <div class="filter-bar" id="homeFilterBar">
+      <!-- Populated by projects.js -->
+    </div>
+
+    <div class="grid-2" id="homeProjectsGrid">
+      <!-- Populated by projects.js -->
+    </div>
+  </section>
+
+  <!-- ── ABOUT ──────────────────────────────────────────── -->
+  <section id="about" class="section" style="padding:92px 36px;">
+    <div class="about-layout">
+      <div>
+        <div class="about-portrait">
+          <img src="assets/images/gamalieltunprofile.jpeg" alt="Gamaliel Tun" />
+        </div>
+      </div>
+      <div class="about-body">
+        <div class="label-num">(03) — About</div>
+        <h2>A computer engineer who likes hard problems and a good ink pen.</h2>
+        <p>I'm a Computer Engineering graduate and Digital Development Officer working between Singapore and Myanmar. My day work spans full-stack development, embedded systems, and cloud infrastructure — often in the service of organisations doing real-world good.</p>
+        <p>Outside of engineering I draw, make films, and record conversations under <a href="gamayio.html" style="color:var(--red);">Gamayio</a>. Same instinct, different tools: build something honest, and make it last.</p>
+        <dl class="about-dl">
+          <dt>Now</dt><dd>Consulting — Church of the Province of Myanmar</dd>
+          <dt>Based</dt><dd>Singapore &amp; Myanmar</dd>
+          <dt>Status</dt><dd><span style="color:var(--red);">Open</span> to full-time engineering roles</dd>
+          <dt>Stack</dt><dd>Full-stack · Embedded · Cloud · Dashboards</dd>
+        </dl>
+        <div style="margin-top:28px;">
+          <a href="about.html" class="link-underline">Full story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CREATIVE ───────────────────────────────────────── -->
+  <section id="creative" class="section" style="padding:92px 36px;">
+    <div class="section-head">
+      <div class="label-num">(04) — Creative work</div>
+      <h2 style="margin:0 0 14px;max-width:18ch;">The other half of the brain.</h2>
+      <p style="max-width:56ch;">Abstract art, filmmaking, and podcasting — a personal creative lab at the intersection of story and technology.</p>
+    </div>
+    <div class="grid-2" style="margin-top:46px;">
+      <a href="gamayio.html" class="creative-card">
+        <div class="creative-cover" style="background:#15120E;">
+          <span class="creative-glyph" style="color:#ECE6DB;">G○</span>
+        </div>
+        <div class="creative-body">
+          <div class="creative-title-row">
+            <h3>Gamayio</h3>
+            <span class="creative-kind">Podcast &amp; Film</span>
+          </div>
+          <p>A personal creative lab — cinematic videos and conversations at the intersection of story and technology.</p>
+          <span class="link-underline" style="display:inline-block;margin-top:16px;">Visit Gamayio →</span>
+        </div>
+      </a>
+      <a href="blog.html" class="creative-card">
+        <div class="creative-cover" style="background:#F4F1EA;">
+          <span class="creative-glyph" style="color:#15120E;">Frag.</span>
+        </div>
+        <div class="creative-body">
+          <div class="creative-title-row">
+            <h3>Fragments of Thoughts</h3>
+            <span class="creative-kind">Writing</span>
+          </div>
+          <p>Notes, reflections, and observations on technology, creativity, and what it means to build things that matter.</p>
+          <span class="link-underline" style="display:inline-block;margin-top:16px;">Read the blog →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── WRITING ────────────────────────────────────────── -->
+  <section id="writing" class="section" style="padding:92px 36px;">
+    <div class="section-head-row">
+      <div>
+        <div class="label-num">(05) — Writing</div>
+        <h2 style="margin:0;">Latest from the blog.</h2>
+      </div>
+      <a href="blog.html" class="link-underline">All posts →</a>
+    </div>
+    <div class="writing-list" id="homeWriting">
+      <!-- Populated by blog.js -->
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────── -->
+  <section id="contact" class="section-dark">
+    <div class="contact-section" style="max-width:1200px;margin:0 auto;">
+      <div class="label-num" style="color:#8A8073;">(06) — Contact</div>
+      <h2 style="max-width:14ch;margin:0 0 36px;color:#ECE6DB;">Let's build something.</h2>
+      <a href="mailto:gamaliel.tun@gmail.com?subject=Hello%20Gamaliel" class="contact-email">
+        gamaliel.tun@gmail.com
+      </a>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/gamalieltun/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/gamalieltun" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="blog.html">Blog ↗</a>
+        <a href="portfolio.html">Projects ↗</a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© <span id="year"></span> Gamaliel Tun. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/gamalieltun/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/gamalieltun" target="_blank" rel="noopener">GitHub</a>
-      <a href="blog.html">Blog</a>
-    </div>
-  </div>
+  <span>© <span id="year"></span> Gamaliel Tun. All rights reserved.</span>
+  <span>Engineer · Consultant · Builder — Singapore / Myanmar</span>
 </footer>
 
 <script src="data/posts.js"></script>
 <script src="data/projects.js"></script>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/blog.js"></script>
 <script src="assets/js/projects.js"></script>
+<script src="assets/js/blog.js"></script>
 
 <script>
-(function () {
-  // ── Footer year ──────────────────────────────
-  var yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ── Section title reveal ──────────────────────
-  if ('IntersectionObserver' in window) {
-    var titleObs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in-view'); });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('.section-title').forEach(function(el) { titleObs.observe(el); });
-
-    // ── Card reveal ──────────────────────────────
-    var cardObs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal-card').forEach(function(el) { cardObs.observe(el); });
-  } else {
-    // Fallback: show everything immediately
-    document.querySelectorAll('.reveal-card').forEach(function(el) { el.classList.add('visible'); });
-    document.querySelectorAll('.section-title').forEach(function(el) { el.classList.add('in-view'); });
-  }
-
-  // ── Typing effect (runs exactly once) ────────
-  var typingDone = false;
-  function typeWriter(el, text, speed) {
-    if (typingDone) return;
-    typingDone = true;
-    var i = 0;
-    el.textContent = '';
-    function tick() {
-      if (i < text.length) {
-        el.textContent += text.charAt(i++);
-        setTimeout(tick, speed);
-      } else {
-        setTimeout(function() { el.style.borderRight = 'none'; }, 1400);
-      }
+  // Typing init for hero
+  if (!window._typingDone) {
+    window._typingDone = true;
+    var el = document.querySelector('.hero h1');
+    if (el) {
+      var full = el.innerHTML;
+      el.style.minHeight = el.offsetHeight + 'px';
     }
-    tick();
   }
 
-  var typingEl = document.querySelector('.typing-text');
-  if (typingEl) {
-    var originalText = typingEl.textContent.trim();
-    // Wait for DOM to settle, then type once
-    setTimeout(function() {
-      typeWriter(typingEl, originalText, 85);
-    }, 500);
+  // Scroll reveals
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, {threshold:.08, rootMargin:'0px 0px -30px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
   }
 })();
 </script>
-
-<style>
-/* ── Inline page-specific overrides ── */
-
-/* Stats bar */
-.stats-bar {
-  background: var(--bg-2);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 1.75rem 0;
-}
-.stats-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-.stat { text-align: center; flex: 1; min-width: 100px; }
-.stat-num {
-  display: block;
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--red);
-  line-height: 1;
-}
-.stat-label {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  display: block;
-  margin-top: 0.2rem;
-}
-.stat-divider {
-  width: 1px;
-  height: 2.5rem;
-  background: var(--border);
-  flex-shrink: 0;
-}
-@media (max-width: 600px) {
-  .stat-divider { display: none; }
-  .stat { min-width: 120px; }
-}
-
-/* Card number */
-.card-number {
-  display: inline-block;
-  font-size: 0.65rem;
-  margin-bottom: 0.75rem;
-  padding: 0.2rem 0.5rem;
-  border: 1px solid var(--border-hover);
-}
-
-/* CTA Strip */
-.cta-strip {
-  background: var(--bg-2);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 3.5rem 0;
-  position: relative;
-  overflow: hidden;
-}
-.cta-strip::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--red-dim) 0%, transparent 50%);
-  pointer-events: none;
-}
-.cta-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  position: relative;
-  z-index: 1;
-}
-.cta-heading {
-  font-size: clamp(2rem, 5vw, 4rem);
-  color: var(--ink);
-  margin: 0;
-}
-</style>
-
-<script src="assets/js/animations.js"></script>
 </body>
 </html>

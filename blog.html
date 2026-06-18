@@ -1,103 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — Gamaliel Tun</title>
-  <meta name="description" content="Blog articles by [Your Name] on technology, learning, and projects." />
-
-  <meta property="og:title" content="Blog — Gamaliel Tun" />
-  <meta property="og:description" content="Blog articles by [Your Name] on technology, learning, and projects." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.com/blog.html" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
-  <link rel="shortcut icon" type="image/png" href="assets/images/logo.png" />
-  <link rel="apple-touch-icon" href="assets/images/logo.png" />
-  
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fragments of Thoughts — Gamaliel Tun</title>
+<meta name="description" content="Writing by Gamaliel Tun on technology, creativity, and what it means to build things that last." />
+<link rel="icon" type="image/png" href="assets/images/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-          <a href="index.html" class="logo">Gamaliel Tun</a>
-      
-          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-          </button>
-      
-          <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="portfolio.html">Projects</a></li>
-              <li><a href="blog.html" class="active">Blog</a></li>
-              <li><a href="gamayio.html" >Gamayio</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1>Blog</h1>
-        <p>Thoughts, notes, and stories from my journey.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="blog-controls" aria-label="Blog filters and search">
-          <div class="blog-search">
-            <label for="blogSearch" class="sr-only">Search posts</label>
-            <input type="search" id="blogSearch" placeholder="Search posts..." />
-          </div>
-
-          <div class="blog-filter-group">
-            <label for="tagFilter">Tag:</label>
-            <select id="tagFilter">
-              <option value="">All tags</option>
-              <!-- Filled dynamically -->
-            </select>
-          </div>
-
-          <div class="blog-sort-group">
-            <label for="sortOrder">Sort:</label>
-            <select id="sortOrder">
-              <option value="newest">Newest first</option>
-              <option value="oldest">Oldest first</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="grid-3" id="blogList" aria-live="polite">
-          <!-- Posts injected here -->
-        </div>
-
-        <div class="pagination" id="pagination" aria-label="Blog pagination">
-          <!-- Pagination buttons injected here -->
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Gamaliel Tun. All rights reserved.</p>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <span class="logo-block">GT</span>
+      <span class="logo-name">Gamaliel Tun</span>
+    </a>
+    <div class="nav-right">
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-links">
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#creative">Creative</a></li>
+          <li><a href="blog.html" class="active">Writing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <span class="open-badge"><span class="open-dot"></span>Open to roles</span>
     </div>
-  </footer>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+</header>
 
-  <script src="data/posts.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/blog.js"></script>
+<main>
+
+  <section class="page-hero">
+    <div class="label-num" style="margin-bottom:8px;">Gamaliel Tun</div>
+    <h1 style="margin:0;">Fragments<br>of Thoughts</h1>
+    <p style="max-width:44ch;margin-top:18px;">Notes on technology, creativity, and what it means to build things that last.</p>
+  </section>
+
+  <section class="section" style="padding:52px 36px 92px;">
+    <div class="blog-controls">
+      <div class="blog-search">
+        <input type="text" id="searchInput" placeholder="Search posts…" aria-label="Search" />
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--ink-3);">
+        <span>Tag:</span>
+        <select id="tagFilter" style="font-family:var(--font-mono);font-size:12px;padding:8px 12px;background:transparent;border:1px solid var(--border-md);color:var(--ink);outline:none;cursor:pointer;">
+          <option value="All">All</option>
+          <option value="Technology">Technology</option>
+          <option value="Life">Life</option>
+          <option value="Books">Books</option>
+        </select>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--ink-3);">
+        <span>Sort:</span>
+        <select id="sortOrder" style="font-family:var(--font-mono);font-size:12px;padding:8px 12px;background:transparent;border:1px solid var(--border-md);color:var(--ink);outline:none;cursor:pointer;">
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="writing-list" id="blogGrid">
+      <!-- Populated by blog.js -->
+    </div>
+    <p id="noPostsMsg" style="display:none;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);margin-top:28px;">No posts found.</p>
+    <div id="pagination" style="display:flex;gap:8px;margin-top:40px;"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Gamaliel Tun. All rights reserved.</span>
+  <span>Engineer · Consultant · Builder — Singapore / Myanmar</span>
+</footer>
+
+<script src="data/posts.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/blog.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
